@@ -1,16 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<h1>えもえもメッセージ</h1>
+<h2>団体理念</h2>
+<p>やりたいことをやろう</p>
+<h2>団体情報</h2>
+<h2>プロダクト一覧</h2>
+<h2>活動予定</h2>
+<h2>よくある質問</h2>
+<p>未経験でも大丈夫ですか？</p>
+<p>大丈夫です。きっと</p>
+<p>パソコンが家にないけど大丈夫ですか？</p>
+<p>大丈夫です。きっと</p>
+<h2>お問い合わせ</h2>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
