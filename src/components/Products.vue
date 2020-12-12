@@ -1,27 +1,26 @@
 <template>
-  <div v-for = "project in projects" :key = "project.name">
-  <img src ="@/assets/logo.png" width = "128"/>
+<div class="productContainer">
+  <div class="product" v-for = "project in projects" :key = "project.name">
+  <img class="productimage" src ="@/assets/logo.png"/>
     <ul>
       <li>
         <a v-if = "project.web!=undefined" v-bind:href = "project.web">
-          <img src="@/assets/website.png" width="32"/>
+          <img class="iconimage" src="@/assets/website.png" />
         </a>
       </li>
       <li>
         <a v-if = "project.ios!=undefined" v-bind:href ="project.ios" >
-          <img src="@/assets/apple.png" width="32"/>
+          <img class="iconimage" src="@/assets/apple.png" />
         </a>
       </li>
       <li>
         <a v-if = "project.android!=undefined" v-bind:href = "project.android">
-          <img src="@/assets/android.png" width="32"/>
+          <img class="iconimage" src="@/assets/android.png"/>
         </a>
       </li>
     </ul>
   </div>
-  <pre>
-    {{$data}}
-  </pre>
+</div>
 </template>
 
 <script>
@@ -48,6 +47,19 @@ export default {
 </script>
 
 <style scoped>
+.product{
+  padding: 0 20px;
+  display: inline-block;
+}
+.productContainer{
+  text-align: center;
+}
+.productimage{
+  width: 189px
+}
+.iconimage{
+  width: 32px
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -62,4 +74,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
