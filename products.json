@@ -1,0 +1,16 @@
+{
+  "products" : {
+    "Qroon" : {
+      "name":"Qroon",
+      "ios":"https://apps.apple.com/us/app/qroon/id1354363903?l=ja",
+      "android":"https://play.google.com/store/apps/details?id=tmy.jack.Qroon",
+      "web":"https://jack-web.herokuapp.com/products"
+    },
+    "pertica" : {
+      "name":"peritca",
+      "ios":"https://apps.apple.com/jp/app/pertica/id1445813632",
+      "android":"https://play.google.com/store/apps/details?id=tmy.jack.pertica",
+      "web":"https://jack-web.herokuapp.com/products"
+    }
+  }
+}
