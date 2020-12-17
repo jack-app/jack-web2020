@@ -1,20 +1,20 @@
 <template>
 <div class="productContainer">
   <div class="product" v-for = "project in projects" :key = "project.name">
-  <img class="productimage" src ="@/assets/logo.png"/>
+  <img class="productimage" src="@/assets/logo.png" />
     <ul>
       <li>
-        <a v-if = "project.web!=undefined" v-bind:href = "project.web">
+        <a v-if = "project.web!=null" v-bind:href = "project.web">
           <img class="iconimage" src="@/assets/website.png" />
         </a>
       </li>
       <li>
-        <a v-if = "project.ios!=undefined" v-bind:href ="project.ios" >
+        <a v-if = "project.ios!=null" v-bind:href ="project.ios" >
           <img class="iconimage" src="@/assets/apple.png" />
         </a>
       </li>
       <li>
-        <a v-if = "project.android!=undefined" v-bind:href = "project.android">
+        <a v-if = "project.android!=null" v-bind:href = "project.android">
           <img class="iconimage" src="@/assets/android.png"/>
         </a>
       </li>
@@ -25,6 +25,7 @@
 
 <script>
 import firebase from 'firebase'
+
 export default {
   data: ()=> ({
     projects:[
@@ -39,19 +40,27 @@ export default {
   created (){
     let ls = firebase.database().ref('products');
     let self = this;
-    ls.once('value',snapshot => snapshot.forEach(function(children){
-      self.projects.push(children.val());
-    }))
+    let prearray = [];
+    ls.once('value',snapshot => {
+      snapshot.forEach(function(children){
+        prearray.push(children.val());
+      })
+      for(let i=0;i<5;i++){
+        let rand = Math.floor(Math.random()*prearray.length);
+        self.projects.push(prearray[rand]);
+        prearray.splice(rand,1);
+      }
+    })
   }
 }
 </script>
 
 <style scoped>
-.product{
+.product {
   padding: 0 20px;
   display: inline-block;
 }
-.productContainer{
+.productContainer div{
   text-align: center;
 }
 .productimage{
