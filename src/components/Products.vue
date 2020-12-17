@@ -1,20 +1,20 @@
 <template>
 <div class="productContainer">
-  <div class="product" v-for = "project in projects" :key = "project.name">
+  <div class="product" v-for = "product in products" :key = "product.name">
   <img class="productimage" src="@/assets/logo.png" />
     <ul>
       <li>
-        <a v-if = "project.web!=null" v-bind:href = "project.web">
+        <a v-if = "product.web!=null" v-bind:href = "product.web">
           <img class="iconimage" src="@/assets/website.png" />
         </a>
       </li>
       <li>
-        <a v-if = "project.ios!=null" v-bind:href ="project.ios" >
+        <a v-if = "product.ios!=null" v-bind:href ="product.ios" >
           <img class="iconimage" src="@/assets/apple.png" />
         </a>
       </li>
       <li>
-        <a v-if = "project.android!=null" v-bind:href = "project.android">
+        <a v-if = "product.android!=null" v-bind:href = "product.android">
           <img class="iconimage" src="@/assets/android.png"/>
         </a>
       </li>
@@ -28,7 +28,7 @@ import firebase from 'firebase'
 
 export default {
   data: ()=> ({
-    projects:[
+    products:[
     /*{
         name:"Qroon",
         ios:"https://apps.apple.com/us/app/qroon/id1354363903?l=ja",
@@ -47,7 +47,7 @@ export default {
       })
       for(let i=0;i<5;i++){
         let rand = Math.floor(Math.random()*prearray.length);
-        self.projects.push(prearray[rand]);
+        self.products.push(prearray[rand]);
         prearray.splice(rand,1);
       }
     })
