@@ -1,6 +1,7 @@
 {
   "products" : {
     "Qroon" : {
+      "icon":"https://firebasestorage.googleapis.com/v0/b/jack-web2020.appspot.com/o/producticons%2Ffp.png?alt=media&token=98907cbe-50e8-47d3-9e65-472dfc8dbcbc",
       "name":"Qroon",
       "ios":"https://apps.apple.com/us/app/qroon/id1354363903?l=ja",
       "android":"https://play.google.com/store/apps/details?id=tmy.jack.Qroon"

@@ -1,7 +1,12 @@
 <template>
 <div class="productContainer">
   <div class="product" v-for = "product in products" :key = "product.name">
-  <img class="productimage" src="@/assets/logo.png" />
+    <div v-if = "product.icon!= null">
+      <img class="productimage" :src="product.icon" :alt="product.name" />
+    </div>
+    <div v-else>
+      <img class="productimage" src="@/assets/noimage.png" :alt = "product.name"/>
+    </div>
     <ul>
       <li>
         <a v-if = "product.web!=null" v-bind:href = "product.web">
@@ -41,12 +46,14 @@ export default {
     let ls = firebase.database().ref('products');
     let self = this;
     let prearray = [];
+    //let storage = firebase.storage()
     ls.once('value',snapshot => {
       snapshot.forEach(function(children){
         prearray.push(children.val());
       })
       for(let i=0;i<5;i++){
         let rand = Math.floor(Math.random()*prearray.length);
+        rand = 0;
         self.products.push(prearray[rand]);
         prearray.splice(rand,1);
       }
