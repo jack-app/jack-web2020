@@ -53,7 +53,6 @@ export default {
       })
       for(let i=0;i<5;i++){
         let rand = Math.floor(Math.random()*prearray.length);
-        rand = 0;
         self.products.push(prearray[rand]);
         prearray.splice(rand,1);
       }
