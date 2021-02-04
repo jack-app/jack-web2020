@@ -1,37 +1,24 @@
 <template>
 <div class="productContainer">
-  <div class="product" v-for = "product in products" :key = "product.name">
-    <div v-if = "product.icon!= null">
-      <img class="productimage" :src="product.icon" :alt="product.name" />
-    </div>
-    <div v-else>
-      <img class="productimage" src="@/assets/noimage.png" :alt = "product.name"/>
-    </div>
-    <ul>
-      <li>
-        <a v-if = "product.web!=null" v-bind:href = "product.web">
-          <img class="iconimage" src="@/assets/website.png" />
-        </a>
-      </li>
-      <li>
-        <a v-if = "product.ios!=null" v-bind:href ="product.ios" >
-          <img class="iconimage" src="@/assets/apple.png" />
-        </a>
-      </li>
-      <li>
-        <a v-if = "product.android!=null" v-bind:href = "product.android">
-          <img class="iconimage" src="@/assets/android.png"/>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <Product v-for = "product in products"
+    :key = "product.name"
+    :icon="product.icon"
+    :name="product.name"
+    :ios="product.ios"
+    :android="product.android"
+    :web="product.web"
+  ></Product>
 </div>
 </template>
 
 <script>
+import Product from './Product.vue'
 import firebase from 'firebase'
 
 export default {
+  components :{
+    Product
+  },
   data: ()=> ({
     products:[
     /*{
@@ -62,32 +49,8 @@ export default {
 </script>
 
 <style scoped>
-.product {
-  padding: 0 20px;
-  display: inline-block;
-}
 .productContainer div{
-  text-align: center;
-}
-.productimage{
-  width: 189px
-}
-.iconimage{
-  width: 32px
-}
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+  display: flex;
 }
 
 </style>
