@@ -1,14 +1,14 @@
 <template>
-<div class="productContainer">
-  <Product v-for = "product in products"
-    :key = "product.name"
-    :icon="product.icon"
-    :name="product.name"
-    :ios="product.ios"
-    :android="product.android"
-    :web="product.web"
-  ></Product>
-</div>
+  <div class="productContainer">
+    <Product v-for = "product in products"
+      :key ="product.name"
+      :icon="product.icon"
+      :name="product.name"
+      :ios="product.ios"
+      :android="product.android"
+      :web="product.web"
+    />
+  </div>
 </template>
 
 <script>
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-.productContainer div{
+.productContainer{
   display: flex;
 }
 

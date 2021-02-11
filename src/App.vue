@@ -1,22 +1,15 @@
 <template>
-  <body bgcolor="#fffaf0" text="#333333">
-    <header class="header" style="top:0px">
-      丸い画像を入れる予定
-    </header>
+  <header class="header" style="top:0px">
+    丸い画像を入れる予定
+  </header>
+  <div class="container">
     <div>
-      <h1>
-        <div>やりたいことを、</div>
-        <div>できるようになって、</div>
-        <div>やる。</div>
-      </h1>
+      <h2 class="title">団体理念</h2>
+      <h3>やりたいことをやろう</h3>
+      <p>がんばる</p>
     </div>
     <div>
-      <h2>団体理念</h2>
-        <p>やりたいことをやろう</p>
-        <p>がんばる</p>
-    </div>
-    <div>
-      <h2>団体情報</h2>
+      <h2 class="title">団体情報</h2>
     </div>
       <div>
         <table class="table table-2col">
@@ -52,46 +45,43 @@
           </tbody>
         </table>
     </div>
-    <div>
-      <h2>プロダクト一覧</h2>
-      <ul class="list1">
-        <li>リスト1</li>
-        <li>リスト2</li>
-        <li>リスト3</li>
-        <li>リスト4</li>
-      </ul>
+    <div class="products">
+      <h2 class="products__title title">プロダクト一覧</h2>
+      <div class="products__lists">
+        <Products />
+      </div>
     </div>
     <div>
-      <h2>活動予定</h2>
+      <h2 class="title">活動予定</h2>
       <p>活動予定表を入れる</p>
     </div>
     <div>
-      <h2>よくある質問</h2>
+      <h2 class="title">よくある質問</h2>
        <div class="balloon_l">
-  <div class="faceicon"><img src="#.jpg" alt="" ></div>
-  <p class="says">未経験でも大丈夫ですか？</p>
-</div>
-<div class="balloon_r">
-  <div class="faceicon">
-    <img src="#.jpg" alt="" >
-  </div>
-    <div class="says"><p>大丈夫です。</p><p>きっと。</p></div>
-</div>
+        <div class="faceicon"><img src="#.jpg" alt="" ></div>
+        <p class="says">未経験でも大丈夫ですか？</p>
+      </div>
+      <div class="balloon_r">
+        <div class="faceicon">
+          <img src="#.jpg" alt="" >
+        </div>
+          <div class="says"><p>大丈夫です。</p><p>きっと。</p></div>
+      </div>
     </div>
     <div>
-      <h2>お問い合わせ</h2>
+      <h2 class="title">お問い合わせ</h2>
       <p>お問い合わせを入れる</p>
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+import Products from './components/Products.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    Products
   }
 }
 </script>
@@ -102,19 +92,24 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #333333;
   margin-top: 3.5em;
+  background-color: #fffaf0;
 }
 
+.container {
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-
-h2 {
+.title {
   position: relative;
   padding: 1.5rem;
   text-align: center;
 }
 
-h2:before {
+.title:before {
   position: absolute;
   bottom: -10px;
   left: calc(50% - 30px);

@@ -1,28 +1,22 @@
 <template>
 <div class = "product">
-  <div v-if = "icon!= null">
+  <div v-if = "icon">
     <img class="productimage" :src="icon" :alt="name" />
   </div>
   <div v-else>
     <img class="productimage" src="@/assets/noimage.png" :alt = "name"/>
   </div>
-  <ul>
-    <li>
-      <a v-if = "web!=null" v-bind:href = "web">
-        <img class="iconimage" src="@/assets/website.png" />
-      </a>
-    </li>
-    <li>
-      <a v-if = "ios!=null" v-bind:href ="ios" >
-        <img class="iconimage" src="@/assets/apple.png" />
-      </a>
-    </li>
-    <li>
-      <a v-if = "android!=null" v-bind:href = "android">
-        <img class="iconimage" src="@/assets/android.png"/>
-      </a>
-    </li>
-  </ul>
+  <div class="icons">
+    <a v-if = "web" v-bind:href = "web">
+      <img class="iconimage" src="@/assets/website.png" />
+    </a>
+    <a v-if = "ios" v-bind:href ="ios" >
+      <img class="iconimage" src="@/assets/apple.png" />
+    </a>
+    <a v-if = "android" v-bind:href = "android">
+      <img class="iconimage" src="@/assets/android.png"/>
+    </a>
+  </div>
 </div>
 </template>
 
@@ -33,29 +27,31 @@ export default {
 </script>
 
 <style scoped>
-.product{
-  width: 189px;
-  margin: 0;
+.product {
+  width: 20%;
+  padding: 15px 10px;
+  margin: 5% 0;
 }
-.productimage{
-  width: 189px;
+
+.productimage {
+  width: 100%;
 }
-.iconimage{
+
+.icons {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.iconimage {
   width: 32px;
 }
+
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+
 a {
   color: #42b983;
 }
-
 </style>
