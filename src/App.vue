@@ -58,7 +58,7 @@
     <div>
       <h2 class="title">よくある質問</h2>
        <div class="balloon_l">
-  <div class="faceicon"><img src="@/assets/Thoughts-pana.png" alt="考える人" ></div>
+  <div class="faceicon"><img src="@/assets/Worried-amico.png" alt="考える人" ></div>
   <p class="says">未経験でも大丈夫ですか？</p>
 </div>
 <div class="balloon_r">
@@ -145,10 +145,10 @@ ul {
 
 table {
   border-collapse: collapse;
-  border-spacing: 5px;
+  border-spacing: 0.3em;
   margin: 0 auto;
   padding: 0;
-  width: 600px;
+  width: 37.5em;
   margin-left: auto;
   margin-right: auto;
 }
