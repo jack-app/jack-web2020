@@ -34,9 +34,9 @@
               <th>活動内容</th>
               <td>
                 <ul>
-                  <li>Andloid・iOSアプリケーション製作</li>
+                  <li>Android・iOSアプリケーション製作</li>
                   <li>パソコン用ソフトウェア製作</li>
-                  <li>サービス・ゲーム規格の構想及び運営</li>
+                  <li>サービス・ゲーム企画の構想及び運営</li>
                   <li>Webコンテンツ製作・提供</li>
                   <li>各種ハッカソン・ITイベントへの参加等</li>
                 </ul>
@@ -51,9 +51,9 @@
         <Products />
       </div>
     </div>
-    <div>
+    <div class="calendar">
       <h2 class="title">活動予定</h2>
-      <p>活動予定表を入れる</p>
+      <Calendar />
     </div>
     <div>
       <h2 class="title">よくある質問</h2>
@@ -77,11 +77,13 @@
 
 <script>
 import Products from './components/Products.vue'
+import Calendar from './components/Calendar.vue'
 
 export default {
   name: 'App',
   components: {
-    Products
+    Products,
+    Calendar
   }
 }
 </script>
@@ -107,6 +109,7 @@ export default {
   position: relative;
   padding: 1.5rem;
   text-align: center;
+  margin-bottom: 5vh;
 }
 
 .title:before {
