@@ -1,15 +1,13 @@
 <template>
-  <body bgcolor="#fffaf0" text="#333333">
-    <header class="header" style="top:0px">
-      丸い画像を入れる予定
+ <header class="header" style="top:0px">
+      <h1 class="site-logo"><img src="images/logo.png" alt="ロゴ"></h1>
+        <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Hamberger</title>
+          <link rel="stylesheet" href="style.css">
     </header>
-    <div>
-      <h1>
-        <div>やりたいことを、</div>
-        <div>できるようになって、</div>
-        <div>やる。</div>
-      </h1>
-    </div>
+
+  <body bgcolor="#f5f5f5" text="#333333">
     <div>
       <h2>団体理念</h2>
         <p>やりたいことをやろう</p>
@@ -68,12 +66,12 @@
     <div>
       <h2>よくある質問</h2>
        <div class="balloon_l">
-  <div class="faceicon"><img src="#.jpg" alt="" ></div>
+  <div class="faceicon"><img src="@/assets/Thoughts-pana.png" alt="考える人" ></div>
   <p class="says">未経験でも大丈夫ですか？</p>
 </div>
 <div class="balloon_r">
   <div class="faceicon">
-    <img src="#.jpg" alt="" >
+    <img src="" alt="答える人" >
   </div>
     <div class="says"><p>大丈夫です。</p><p>きっと。</p></div>
 </div>
@@ -108,6 +106,9 @@ export default {
 
 
 
+
+
+/*消さないで*/
 h2 {
   position: relative;
   padding: 1.5rem;
@@ -122,10 +123,25 @@ h2:before {
   height: 5px;
   content: '';
   border-radius: 3px;
-  background: #FEC139;
+  background: #F29F05;
 }
 
 
+
+/*ヘッダー*/
+.header{
+    background: rgba(255,255,255,0.5);
+    display: flex;
+    padding: 60px 20px;
+    position: fixed;
+    justify-content: space-between;
+    transition: .5s;
+    width: 100%;
+}
+.header.transform{
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+}
 
 /*表 */
 
@@ -211,10 +227,13 @@ table td{
 /*   align-items: center; */ /*縦位置を真ん中揃え*/
 }
 .balloon_r{
+  margin-right: 10px;
+  position:relative;
+  left:10px;
   justify-content:flex-end;
 }
 .faceicon img{
-  width: 80px; /*任意のサイズ*/
+  width: 90px; /*任意のサイズ*/
   height: auto;
 }
 .balloon_r .faceicon{
