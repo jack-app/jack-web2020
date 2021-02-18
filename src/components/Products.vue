@@ -1,5 +1,5 @@
 <template>
-  <div class="productContainer">
+  <div class="product-container">
     <Product v-for = "product in products"
       :key ="product.name"
       :icon="product.icon"
@@ -49,8 +49,7 @@ export default {
 </script>
 
 <style scoped>
-.productContainer{
+.product-container{
   display: flex;
 }
-
 </style>
