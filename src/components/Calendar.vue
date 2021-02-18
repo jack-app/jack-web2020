@@ -1,6 +1,6 @@
 <template>
 <div class='calendar-container'>
-  <iframe src="https://calendar.google.com/calendar/u/0/embed?src=jackapp.tmy@gmail.com&ctz=Asia/Tokyo" showTitle=0 showTabs = 0 showPrint=0></iframe>
+  <iframe src="https://calendar.google.com/calendar/embed?src=jackapp.tmy@gmail.com&ctz=Asia/Tokyo" showTitle=0 showTabs=0 showPrint=0></iframe>
 </div>
 </template>
 
@@ -9,9 +9,12 @@
 </script>
 
 <style scoped>
-iframe {
-  width:100%;
-  max-width: 606px;
-  height: 344px;
+.calendar-container iframe {
+  position: relative;
+  width:80%;
+  height: 50vh;
+  max-height: 300px;
+  overflow: hidden;
+
 }
 </style>

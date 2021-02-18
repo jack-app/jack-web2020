@@ -44,7 +44,7 @@ export default {
 }
 
 .iconimage {
-  width: 32px;
+  width: 3vw;
 }
 
 h3 {

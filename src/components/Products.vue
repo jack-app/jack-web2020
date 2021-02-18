@@ -36,11 +36,11 @@ export default {
     //let storage = firebase.storage()
     ls.once('value',snapshot => {
       snapshot.forEach(function(children){
-        prearray.push(children.val());
+        prearray.push(children.val()); //配列に入れる
       })
       for(let i=0;i<5;i++){
         let rand = Math.floor(Math.random()*prearray.length);
-        self.products.push(prearray[rand]);
+        self.products.push(prearray[rand]);  //ランダムに5個取り出す
         prearray.splice(rand,1);
       }
     })
