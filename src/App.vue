@@ -58,12 +58,12 @@
     <div>
       <h2 class="title">よくある質問</h2>
        <div class="balloon_l">
-  <div class="faceicon"><img src="@/assets/Worried-amico.png" alt="考える人" ></div>
+  <div class="faceicon"><img src="@/assets/Talk1.png" alt="考える人" ></div>
   <p class="says">未経験でも大丈夫ですか？</p>
 </div>
 <div class="balloon_r">
   <div class="faceicon">
-    <img src="" alt="答える人" >
+    <img src="@/assets/Talk2.png" alt="答える人" >
   </div>
     <div class="says"><p>大丈夫です。</p><p>きっと。</p></div>
 </div>
@@ -94,7 +94,7 @@ export default {
   text-align: center;
   color: #333333;
   margin-top: 3.5em;
-  background-color: #fffaf0;
+  background-color: #fff;
 }
 
 .container {
